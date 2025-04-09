@@ -3,6 +3,8 @@ let currentProduct = null;
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 updateCartCount();
 
+
+
 // Funções do Modal
 function openModal(productId, productName, productPrice, productDescription, productImage) {
     // Preencher os detalhes do modal
@@ -13,20 +15,35 @@ function openModal(productId, productName, productPrice, productDescription, pro
 
     // Exibir o modal
     document.getElementById('quantity-modal').style.display = 'block';
+
+    // Resetar a quantidade para 1
+    document.getElementById('quantity').value = 1;
+
+    // Exibir o modal
+    document.getElementById('quantity-modal').style.display = 'block';
+
 }
 
 function closeModal() {
     document.getElementById('quantity-modal').style.display = 'none';
 }
 function proceedToPayment() {
+    // Calcular o valor total do carrinho
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    // Salvar o valor total no localStorage
+    localStorage.setItem('cartTotal', total.toFixed(2));
     showToast('Redirecionando para a página de pagamento...');
-    // Aqui você pode adicionar lógica para redirecionar para a página de pagamento real
-    closePaymentModal();
+    // Redirecionar para a página de pagamento
+    window.location.href = 'pagina-de-pagamento.html';
+}
+
+function proceedToGoBack() {
+    window.location.href = 'index.html';
 }
 
 function incrementQuantity() {
     const input = document.getElementById('quantity');
-    if (input.value < 10) {
+    if (input.value < 5) {
         input.value = parseInt(input.value) + 1;
     }
 }
@@ -50,16 +67,27 @@ function addToCart() {
     const existingProduct = cart.find(item => item.name === productName);
 
     if (existingProduct) {
-        // Atualizar a quantidade se o produto já estiver no carrinho
-        existingProduct.quantity += productQuantity;
+        // Calcular a nova quantidade total
+        const newQuantity = existingProduct.quantity + productQuantity;
+        if (newQuantity > 5) {
+            showToast('Você só pode adicionar até 5 unidades deste item no total.');
+            return; // Impedir a adição ao carrinho
+        } else {
+            existingProduct.quantity = newQuantity;
+        }
     } else {
         // Adicionar novo produto ao carrinho
-        cart.push({
-            name: productName,
-            price: productPrice,
-            quantity: productQuantity,
-            image: productImage
-        });
+        if (productQuantity > 5) {
+            showToast('Você só pode adicionar até 5 unidades deste item no total.');
+            return; // Impedir a adição ao carrinho
+        } else {
+            cart.push({
+                name: productName,
+                price: productPrice,
+                quantity: productQuantity,
+                image: productImage
+            });
+        }
     }
 
     // Atualizar o contador do carrinho
@@ -248,12 +276,6 @@ function openPaymentModal() {
 function closePaymentModal() {
     const paymentModal = document.getElementById('payment-modal');
     paymentModal.style.display = 'none';
-}
-
-function proceedToPayment() {
-    showToast('Redirecionando para a página de pagamento...');
-    // Aqui você pode redirecionar para uma página de pagamento real
-    closePaymentModal();
 }
 
 function showToast(message) {

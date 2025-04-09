@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Bikes Store</title>
+    <title>La Casa da Pizza</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <link rel="icon" href="images/fav-icon-pizzaria.png">
+
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <h1>E-Bikes Store</h1>
+            <h1>La Casa da Pizza</h1>
         </div>
         <nav class="menu">
             <ul>
@@ -25,89 +28,191 @@
             <span id="cart-count">0</span>
         </div>
     </header>
-
+    
     <main>
+        
+        <div class="product-barra">Pizzas</div>
+            <section class="products">
+                <div class="product-card">
+                    <img src="images/frangoCatupiry.png" alt="FRANGO COM CATUPIRY">
+                    <h3>FRANGO COM CATUPIRY</h3>
+                    <p class="price">R$ 79,90</p>
+                    <p class="description">MOLHO, FRANGO, CATUPIRY, CREME DE LEITE E ORÉGANO.</p>
+                    <button
+                        onclick="openModal(1, 'FRANGO COM CATUPIRY', 79.90, 'MOLHO, FRANGO, CATUPIRY, CREME DE LEITE E ORÉGANO.', 'images/frangoCatupiry.png')">Adicionar
+                        ao Carrinho</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/brocolis.png" alt="BROCOLIS">
+                    <h3>BRÓCOLIS</h3>
+                    <p class="price">R$ 68,40</p>
+                    <p class="description">MOLHO, MUSSARELA, BRÓCOLIS, ORÉGANO E CATUPIRY.</p>
+                    <button
+                        onclick="openModal(2, 'BRÓCOLIS', 68.40, 'MOLHO, MUSSARELA, BRÓCOLIS, ORÉGANO E CATUPIRY.', 'images/brocolis.png')">Adicionar
+                        ao Carrinho</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/calabresa.png" alt="CALABRESA">
+                    <h3>CALABRESA</h3>
+                    <p class="price">R$ 64,90</p>
+                    <p class="description">MOLHO, MUSSARELA E CALABRESA.</p>
+                    <button
+                        onclick="openModal(3, 'CALABRESA', 64.90, 'MOLHO, MUSSARELA E CALABRESA.', 'images/calabresa.png')">Adicionar
+                        ao Carrinho</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/lomboEBacon.png" alt="LOMBO E BACON">
+                    <h3>LOMBO E BACON</h3>
+                    <p class="price">R$ 82,40</p>
+                    <p class="description">MOLHO, MUSSARELA, LOMBO DEFUMADO, BACON, ORÉGANO.</p>
+                    <button
+                        onclick="openModal(4, 'LOMBO E BACON', 82.40, 'MOLHO, MUSSARELA, LOMBO DEFUMADO, BACON, ORÉGANO.', 'images/lomboEBacon.png')">Adicionar
+                        ao Carrinho</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/chocolatePretoBisBranco.png" alt="BIS BRANCO">
+                    <h3>BIS BRANCO</h3>
+                    <p class="price">R$ 79,90</p>
+                    <p class="description">QUEIJO, CHOCOLATE PRETO, BIS BRANCO E CALDA DE CHOCOLATE.</p>
+                    <button
+                        onclick="openModal(5, 'BIS BRANCO', 79.50, 'QUEIJO, CHOCOLATE PRETO, BIS BRANCO E CALDA DE CHOCOLATE.', 'images/chocolatePretoBisBranco.png')">Adicionar
+                        ao Carrinho</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/chocolatePretoComMorango.png" alt="MORANGO">
+                    <h3>MORANGO</h3>
+                    <p class="price">R$ 82,80</p>
+                    <p class="description">MUSSARELA, CHOCOLATE PRETO, MORANGO, AMENDOIM, LEITE NINHO E NUTELLA.</p>
+                    <button
+                        onclick="openModal(6, 'MORANGO', 82.80, 'MUSSARELA, CHOCOLATE PRETO, MORANGO, AMENDOIM, LEITE NINHO E NUTELLA.', 'images/chocolatePretoComMorango.png')">Adicionar
+                        ao Carrinho</button>
+                </div>
+
+            </section>
+
+            <!-- Seção de Bebidas -->
+        <div class="product-barra">Bebidas</div>
+
         <section class="products">
-            <div class="product-card">
-                <img src="https://placehold.co/300x200" alt="Mountain E-Bike">
-                <h3>Mountain E-Bike Pro</h3>
-                <p class="price">R$ 12.999,00</p>
-                <p class="description">Bike elétrica ideal para trilhas e montanhas, com bateria de longa duração.</p>
-                <button onclick="openModal(1, 'Mountain E-Bike Pro', 12999.00, 'Bike elétrica ideal para trilhas e montanhas, com bateria de longa duração.', 'https://placehold.co/300x200')">Adicionar ao Carrinho</button>
-            </div>
+        <div class="product-card">
+            <img src="images/coca600ml.png" alt="Coca-Cola 600ml" style="width: 225px; height: auto; object-fit: contain; display: block; margin: auto;">
+            <h3>Coca-Cola 600ml</h3>
+            <p class="price">R$ 9,00</p>
+            <button
+                onclick="openModal(7, 'Coca-Cola', 9.00, '600ml.', 'images/coca600ml.png')">Adicionar
+                ao Carrinho</button>
+        </div>
 
-            <div class="product-card">
-                <img src="https://placehold.co/300x200" alt="Urban E-Bike">
-                <h3>Urban E-Bike Comfort</h3>
-                <p class="price">R$ 8.999,00</p>
-                <p class="description">Perfeita para mobilidade urbana, design moderno e confortável.</p>
-                <button onclick="openModal(2, 'Urban E-Bike Comfort', 8999.00, 'Perfeita para mobilidade urbana, design moderno e confortável.', 'https://placehold.co/300x200')">Adicionar ao Carrinho</button>
-            </div>
+        <div class="product-card">
+            <img src="images/coca2L.png" alt="Coca-Cola 2L" style="width: 225px; height: auto; object-fit: contain; display: block; margin: auto;">
+            <h3>Coca-Cola 2L</h3>
+            <p class="price">R$ 16,00</p>
+            <button
+                onclick="openModal(8, 'Coca-Cola', 16.00, '2L.', 'images/coca2L.png')">Adicionar
+                ao Carrinho</button>
+        </div>
 
-            <div class="product-card">
-                <img src="https://placehold.co/300x200" alt="Sport E-Bike">
-                <h3>Sport E-Bike Speed</h3>
-                <p class="price">R$ 15.999,00</p>
-                <p class="description">Bike elétrica esportiva com alto desempenho e velocidade máxima.</p>
-                <button onclick="openModal(3, 'Sport E-Bike Speed', 15999.00, 'Bike elétrica esportiva com alto desempenho e velocidade máxima.', 'https://placehold.co/300x200')">Adicionar ao Carrinho</button>
-            </div>
+        <div class="product-card">
+            <img src="images/heineken.png" alt="Heineken" style="width: 500px; margin-left: -82px; ">
+            <h3>Heineken Long Neck</h3>
+            <p class="price">R$ 10,00</p>
+            <button
+                onclick="openModal(9, 'Heineken Long Neck', 10.00, '250ml.', 'images/heineken.png')">Adicionar
+                ao Carrinho</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/budweiser.png" alt="Budweiser" style="width: 235px; height: auto; object-fit: contain; display: block; margin: auto;">
+            <h3>Budweiser Long Neck</h3>
+            <p class="price">R$ 12,00</p>
+            <button
+                onclick="openModal(10, 'Budweiser Long Neck', 12.00, '330ml.', 'images/budweiser.png')">Adicionar
+                ao Carrinho</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/delValleLaranja.png" alt="del Valle Laranja" style="width: 235px; height: auto; object-fit: contain; display: block; margin: auto;">
+            <h3>Del Valle Laranja</h3>
+            <p class="price">R$ 6.59</p>
+            <button
+                onclick="openModal(11, 'Del Valle Laranja', 6.59, '200ml.', 'images/delValleLaranja.png')">Adicionar
+                ao Carrinho</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/delValleUva.png" alt="del Valle Uva" style="width: 150px; height: auto; object-fit: contain; display: block; margin: auto;" >
+            <h3>Del Valle Uva</h3>
+            <p class="price">R$ 6.59</p>
+            <button
+                onclick="openModal(12, 'Del Valle Uva', 6.59, '200ml.', 'images/delValleUva.png')">Adicionar
+                ao Carrinho</button>
+        </div>
+        
+
+
         </section>
 
-        <!-- Modal de quantidade -->
-<div id="quantity-modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-product-details">
-            <img id="modal-product-image" src="" alt="Produto" class="modal-product-image">
-            <div class="modal-product-info">
-                <h2 id="modal-product-name">Nome do Produto</h2>
-                <p id="modal-product-description">Descrição do Produto</p>
-                <p class="price">R$ <span id="modal-product-price">0,00</span></p>
-            </div>
-        </div>
-        <h3>Selecione a Quantidade</h3>
-        <div class="quantity-selector">
-            <button onclick="decrementQuantity()">-</button>
-            <input type="number" id="quantity" value="1" min="1" max="10">
-            <button onclick="incrementQuantity()">+</button>
-        </div>
-        <button onclick="addToCart()">Confirmar</button>
-    </div>
-</div>
-
-        <!-- Carrinho de Compras -->
-        <div id="shopping-cart" class="cart-panel">
-            <h2>Carrinho de Compras</h2>
-            <div id="cart-items"></div>
-            <div class="cart-total">
-                <h3>Total: R$ <span id="cart-total">0,00</span></h3>
-            </div>
-            <div class="cart-actions">
-                <button onclick="closeCart()">Continuar Comprando</button>
-                <button onclick="openPaymentModal()">Ir para Pagamento</button>
-            </div>
-        </div>
-
-        <!-- Modal de Pagamento -->
-        <div id="payment-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closePaymentModal()">&times;</span>
-                <h2>Resumo do Pedido</h2>
-                <div id="payment-items"></div>
-                <div class="payment-total">
-                    <h3>Total: R$ <span id="payment-total">0,00</span></h3>
+            <!-- Modal de quantidade -->
+            <div id="quantity-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div class="modal-product-details">
+                        <img id="modal-product-image" src="" alt="Produto" class="modal-product-image">
+                        <div class="modal-product-info">
+                            <h2 id="modal-product-name">Nome do Produto</h2>
+                            <p id="modal-product-description">Descrição do Produto</p>
+                            <p class="price">R$ <span id="modal-product-price">0,00</span></p>
+                        </div>
+                    </div>
+                    <h3>Selecione a Quantidade</h3>
+                    <div class="quantity-selector">
+                        <button onclick="decrementQuantity()">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="5">
+                        <button onclick="incrementQuantity()">+</button>
+                    </div>
+                    <button onclick="addToCart()">Confirmar</button>
                 </div>
-                <button onclick="proceedToPayment()">Ir para Pagamento</button>
             </div>
-        </div>
 
-        <div id="toast" class="toast"></div>
+            <!-- Carrinho de Compras -->
+            <div id="shopping-cart" class="cart-panel">
+                <h2>Carrinho de Compras</h2>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <h3>Total: R$ <span id="cart-total">0,00</span></h3>
+                </div>
+                <div class="cart-actions">
+                    <button onclick="closeCart()">Continuar Comprando</button>
+                    <button onclick="openPaymentModal()">Ir para Pagamento</button>
+                </div>
+            </div>
+
+            <!-- Modal de Pagamento -->
+            <div id="payment-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closePaymentModal()">&times;</span>
+                    <h2>Resumo do Pedido</h2>
+                    <div id="payment-items"></div>
+                    <div class="payment-total">
+                        <h3>Total: R$ <span id="payment-total">0,00</span></h3>
+                    </div>
+                    <button onclick="proceedToPayment()">Ir para Pagamento</button>
+                </div>
+            </div>
+
+            <div id="toast" class="toast"></div>
     </main>
 
     <footer>
-        <p>&copy; 2024 -E-Bikes Store. Todos os direitos reservados.</p>
+        <p>&copy; 2025 - La Casa da Pizza. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
