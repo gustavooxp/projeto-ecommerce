@@ -2,217 +2,310 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Define o conjunto de caracteres usado -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Casa da Pizza</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" href="images/fav-icon-pizzaria.png">
 
+    <!-- Define que o site será responsivo para dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba do navegador -->
+    <title>La Casa da Pizza</title>
+
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Link para a biblioteca de ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Ícone que aparece na aba do navegador -->
+    <link rel="icon" href="images/fav-icon-pizzaria.png">
 </head>
 
 <body>
+    <!-- Cabeçalho da página -->
     <header>
-        <div class="logo">
-            <h1>La Casa da Pizza</h1>
+        <!-- Área do logo e nome da pizzaria -->
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <a href="index.html">
+                <img src="images/logo-pizzaria.png" alt="logoPizzaria" style="width: 70px;">
+            </a>
+            <h1 class="titulo"> La Casa da Pizza</h1>
         </div>
+
+        <!-- Menu de navegação -->
         <nav class="menu">
             <ul>
-                <li><a href="#products">Produtos</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <!-- Link para produtos (com botão de voltar comentado) -->
+                <li><a onclick="proceedToGoBack()" href="#products">Produtos</a></li>
+                <!-- Link para a página "Sobre" -->
+                <li class="nav-item">
+                    <a class="nav-link" href="sobre.html">Sobre</a>
+                </li>
+                <!-- Link para a seção "Contato" -->
+                <li><a href="https://wa.me/554896026605">Contato</a></li>
+
             </ul>
         </nav>
+
+        <!-- Ícone do carrinho de compras -->
         <div class="cart-icon" onclick="toggleCart()">
             <i class="fas fa-shopping-cart"></i>
+            <!-- Contador de itens no carrinho -->
             <span id="cart-count">0</span>
         </div>
     </header>
-    
+
+    <!-- Conteúdo principal da página -->
     <main>
-        
+        <!-- Mensagem de boas-vindas -->
+        <h2>Bem-vindo(a) à La Casa da Pizza!</h2>
+        <p>As melhores pizzas da cidade, o sabor que faz você se sentir em casa!</p>
+        <br>
+
+        <!-- Imagem principal (banner) -->
+        <img src="images/foto-pizza.jpeg" alt="banner"
+            style="max-height: 250px; width: 100%; height: auto; object-fit: cover; border-radius: 10px;">
+
+        <!-- Barra com o título "Pizzas" -->
         <div class="product-barra">Pizzas</div>
-            <section class="products">
-                <div class="product-card">
-                    <img src="images/frangoCatupiry.png" alt="FRANGO COM CATUPIRY">
-                    <h3>FRANGO COM CATUPIRY</h3>
-                    <p class="price">R$ 79,90</p>
-                    <p class="description">MOLHO, FRANGO, CATUPIRY, CREME DE LEITE E ORÉGANO.</p>
-                    <button
-                        onclick="openModal(1, 'FRANGO COM CATUPIRY', 79.90, 'MOLHO, FRANGO, CATUPIRY, CREME DE LEITE E ORÉGANO.', 'images/frangoCatupiry.png')">Adicionar
-                        ao Carrinho</button>
-                </div>
+        <br>
 
-                <div class="product-card">
-                    <img src="images/brocolis.png" alt="BROCOLIS">
-                    <h3>BRÓCOLIS</h3>
-                    <p class="price">R$ 68,40</p>
-                    <p class="description">MOLHO, MUSSARELA, BRÓCOLIS, ORÉGANO E CATUPIRY.</p>
-                    <button
-                        onclick="openModal(2, 'BRÓCOLIS', 68.40, 'MOLHO, MUSSARELA, BRÓCOLIS, ORÉGANO E CATUPIRY.', 'images/brocolis.png')">Adicionar
-                        ao Carrinho</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/calabresa.png" alt="CALABRESA">
-                    <h3>CALABRESA</h3>
-                    <p class="price">R$ 64,90</p>
-                    <p class="description">MOLHO, MUSSARELA E CALABRESA.</p>
-                    <button
-                        onclick="openModal(3, 'CALABRESA', 64.90, 'MOLHO, MUSSARELA E CALABRESA.', 'images/calabresa.png')">Adicionar
-                        ao Carrinho</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/lomboEBacon.png" alt="LOMBO E BACON">
-                    <h3>LOMBO E BACON</h3>
-                    <p class="price">R$ 82,40</p>
-                    <p class="description">MOLHO, MUSSARELA, LOMBO DEFUMADO, BACON, ORÉGANO.</p>
-                    <button
-                        onclick="openModal(4, 'LOMBO E BACON', 82.40, 'MOLHO, MUSSARELA, LOMBO DEFUMADO, BACON, ORÉGANO.', 'images/lomboEBacon.png')">Adicionar
-                        ao Carrinho</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/chocolatePretoBisBranco.png" alt="BIS BRANCO">
-                    <h3>BIS BRANCO</h3>
-                    <p class="price">R$ 79,90</p>
-                    <p class="description">QUEIJO, CHOCOLATE PRETO, BIS BRANCO E CALDA DE CHOCOLATE.</p>
-                    <button
-                        onclick="openModal(5, 'BIS BRANCO', 79.50, 'QUEIJO, CHOCOLATE PRETO, BIS BRANCO E CALDA DE CHOCOLATE.', 'images/chocolatePretoBisBranco.png')">Adicionar
-                        ao Carrinho</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="images/chocolatePretoComMorango.png" alt="MORANGO">
-                    <h3>MORANGO</h3>
-                    <p class="price">R$ 82,80</p>
-                    <p class="description">MUSSARELA, CHOCOLATE PRETO, MORANGO, AMENDOIM, LEITE NINHO E NUTELLA.</p>
-                    <button
-                        onclick="openModal(6, 'MORANGO', 82.80, 'MUSSARELA, CHOCOLATE PRETO, MORANGO, AMENDOIM, LEITE NINHO E NUTELLA.', 'images/chocolatePretoComMorango.png')">Adicionar
-                        ao Carrinho</button>
-                </div>
-
-            </section>
-
-            <!-- Seção de Bebidas -->
-        <div class="product-barra">Bebidas</div>
-
+        <!-- Seção dos produtos -->
         <section class="products">
-        <div class="product-card">
-            <img src="images/coca600ml.png" alt="Coca-Cola 600ml" style="width: 225px; height: auto; object-fit: contain; display: block; margin: auto;">
-            <h3>Coca-Cola 600ml</h3>
-            <p class="price">R$ 9,00</p>
-            <button
-                onclick="openModal(7, 'Coca-Cola', 9.00, '600ml.', 'images/coca600ml.png')">Adicionar
-                ao Carrinho</button>
-        </div>
 
-        <div class="product-card">
-            <img src="images/coca2L.png" alt="Coca-Cola 2L" style="width: 225px; height: auto; object-fit: contain; display: block; margin: auto;">
-            <h3>Coca-Cola 2L</h3>
-            <p class="price">R$ 16,00</p>
-            <button
-                onclick="openModal(8, 'Coca-Cola', 16.00, '2L.', 'images/coca2L.png')">Adicionar
-                ao Carrinho</button>
-        </div>
+            <!-- Card de produto: FRANGO COM CATUPIRY -->
+            <div class="product-card">
+                <img src="images/frangoCatupiry.png" alt="FRANGO COM CATUPIRY"
+                    style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>FRANGO COM CATUPIRY</h3>
+                <p class="price">R$ 79,90</p>
+                <p class="description">MOLHO, FRANGO, CATUPIRY, CREME DE LEITE E ORÉGANO.</p>
+                <!-- Botão para adicionar ao carrinho -->
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(1, 'FRANGO COM CATUPIRY', 79.90, 'MOLHO, FRANGO, CATUPIRY, CREME DE LEITE E ORÉGANO.', 'images/frangoCatupiry.png')">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
 
-        <div class="product-card">
-            <img src="images/heineken.png" alt="Heineken" style="width: 500px; margin-left: -82px; ">
-            <h3>Heineken Long Neck</h3>
-            <p class="price">R$ 10,00</p>
-            <button
-                onclick="openModal(9, 'Heineken Long Neck', 10.00, '250ml.', 'images/heineken.png')">Adicionar
-                ao Carrinho</button>
-        </div>
+            <!-- Card de produto: BRÓCOLIS -->
+            <div class="product-card">
+                <img src="images/brocolis.png" alt="BROCOLIS"
+                    style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>BRÓCOLIS</h3>
+                <p class="price">R$ 68,40</p>
+                <p class="description">MOLHO, MUSSARELA, BRÓCOLIS, ORÉGANO E CATUPIRY.</p>
+                <!-- Botão para adicionar ao carrinho -->
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(2, 'BRÓCOLIS', 68.40, 'MOLHO, MUSSARELA, BRÓCOLIS, ORÉGANO E CATUPIRY.', 'images/brocolis.png')">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
 
-        <div class="product-card">
-            <img src="images/budweiser.png" alt="Budweiser" style="width: 235px; height: auto; object-fit: contain; display: block; margin: auto;">
-            <h3>Budweiser Long Neck</h3>
-            <p class="price">R$ 12,00</p>
-            <button
-                onclick="openModal(10, 'Budweiser Long Neck', 12.00, '330ml.', 'images/budweiser.png')">Adicionar
-                ao Carrinho</button>
-        </div>
+            <!-- Card de produto: CALABRESA -->
+            <div class="product-card">
+                <img src="images/calabresa.png" alt="CALABRESA"
+                    style="width: 274px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>CALABRESA</h3>
+                <p class="price">R$ 64,90</p>
+                <p class="description">MOLHO, MUSSARELA E CALABRESA.</p>
+                <!-- Botão para adicionar ao carrinho -->
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(3, 'CALABRESA', 64.90, 'MOLHO, MUSSARELA E CALABRESA.', 'images/calabresa.png')">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
 
-        <div class="product-card">
-            <img src="images/delValleLaranja.png" alt="del Valle Laranja" style="width: 235px; height: auto; object-fit: contain; display: block; margin: auto;">
-            <h3>Del Valle Laranja</h3>
-            <p class="price">R$ 6.59</p>
-            <button
-                onclick="openModal(11, 'Del Valle Laranja', 6.59, '200ml.', 'images/delValleLaranja.png')">Adicionar
-                ao Carrinho</button>
-        </div>
+            <!-- Card de produto: LOMBO E BACON -->
+            <div class="product-card">
+                <img src="images/lomboEBacon.png" alt="LOMBO E BACON"
+                    style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>LOMBO E BACON</h3>
+                <p class="price">R$ 82,40</p>
+                <p class="description">MOLHO, MUSSARELA, LOMBO DEFUMADO, BACON, ORÉGANO.</p>
+                <!-- Botão para adicionar ao carrinho -->
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(4, 'LOMBO E BACON', 82.40, 'MOLHO, MUSSARELA, LOMBO DEFUMADO, BACON, ORÉGANO.', 'images/lomboEBacon.png')">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
 
-        <div class="product-card">
-            <img src="images/delValleUva.png" alt="del Valle Uva" style="width: 150px; height: auto; object-fit: contain; display: block; margin: auto;" >
-            <h3>Del Valle Uva</h3>
-            <p class="price">R$ 6.59</p>
-            <button
-                onclick="openModal(12, 'Del Valle Uva', 6.59, '200ml.', 'images/delValleUva.png')">Adicionar
-                ao Carrinho</button>
-        </div>
-        
+            <!-- Card de produto: BIS BRANCO -->
+            <div class="product-card">
+                <img src="images/chocolatePretoBisBranco.png" alt="BIS BRANCO"
+                    style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>BIS BRANCO</h3>
+                <p class="price">R$ 79,90</p>
+                <p class="description">QUEIJO, CHOCOLATE PRETO, BIS BRANCO E CALDA DE CHOCOLATE.</p>
+                <!-- Botão para adicionar ao carrinho -->
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(5, 'BIS BRANCO', 79.50, 'QUEIJO, CHOCOLATE PRETO, BIS BRANCO E CALDA DE CHOCOLATE.', 'images/chocolatePretoBisBranco.png')">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
 
-
+            <!-- Card de produto: MORANGO -->
+            <div class="product-card">
+                <img src="images/chocolatePretoComMorango.png" alt="MORANGO"
+                    style="width: 230px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>MORANGO</h3>
+                <p class="price">R$ 82,80</p>
+                <p class="description">MUSSARELA, CHOCOLATE PRETO, MORANGO, AMENDOIM, LEITE NINHO E NUTELLA.</p>
+                <!-- Botão para adicionar produto (Morango) ao carrinho -->
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(6, 'MORANGO', 82.80, 'MUSSARELA, CHOCOLATE PRETO, MORANGO, AMENDOIM, LEITE NINHO E NUTELLA.', 'images/chocolatePretoComMorango.png')">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
         </section>
 
-            <!-- Modal de quantidade -->
-            <div id="quantity-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <div class="modal-product-details">
-                        <img id="modal-product-image" src="" alt="Produto" class="modal-product-image">
-                        <div class="modal-product-info">
-                            <h2 id="modal-product-name">Nome do Produto</h2>
-                            <p id="modal-product-description">Descrição do Produto</p>
-                            <p class="price">R$ <span id="modal-product-price">0,00</span></p>
-                        </div>
-                    </div>
-                    <h3>Selecione a Quantidade</h3>
-                    <div class="quantity-selector">
-                        <button onclick="decrementQuantity()">-</button>
-                        <input type="number" id="quantity" value="1" min="1" max="5">
-                        <button onclick="incrementQuantity()">+</button>
-                    </div>
-                    <button onclick="addToCart()">Confirmar</button>
-                </div>
+        <!-- Seção de Bebidas -->
+        <div class="product-barra">Bebidas</div>
+        <br>
+
+        <section class="products">
+            <!-- Produto: Coca-Cola 600ml -->
+            <div class="product-card">
+                <img src="images/coca600ml.png" alt="Coca-Cola 600ml"
+                    style="width: 225px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>Coca-Cola 600ml</h3>
+                <p class="price">R$ 9,00</p>
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(7, 'Coca-Cola', 9.00, '600ml.', 'images/coca600ml.png')">Adicionar ao
+                    Carrinho</button>
             </div>
 
-            <!-- Carrinho de Compras -->
-            <div id="shopping-cart" class="cart-panel">
-                <h2>Carrinho de Compras</h2>
-                <div id="cart-items"></div>
-                <div class="cart-total">
-                    <h3>Total: R$ <span id="cart-total">0,00</span></h3>
-                </div>
-                <div class="cart-actions">
-                    <button onclick="closeCart()">Continuar Comprando</button>
-                    <button onclick="openPaymentModal()">Ir para Pagamento</button>
-                </div>
+            <!-- Produto: Coca-Cola 2L -->
+            <div class="product-card">
+                <img src="images/coca2L.png" alt="Coca-Cola 2L"
+                    style="width: 225px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>Coca-Cola 2L</h3>
+                <p class="price">R$ 16,00</p>
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(8, 'Coca-Cola', 16.00, '2L.', 'images/coca2L.png')">Adicionar ao
+                    Carrinho</button>
             </div>
 
-            <!-- Modal de Pagamento -->
-            <div id="payment-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closePaymentModal()">&times;</span>
-                    <h2>Resumo do Pedido</h2>
-                    <div id="payment-items"></div>
-                    <div class="payment-total">
-                        <h3>Total: R$ <span id="payment-total">0,00</span></h3>
+            <!-- Produto: Heineken Long Neck -->
+            <div class="product-card">
+                <img src="images/heineken.png" alt="Heineken" style="width: 499px; margin-left: -82px;">
+                <h3>Heineken Long Neck</h3>
+                <p class="price">R$ 10,00</p>
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(9, 'Heineken Long Neck', 10.00, '250ml.', 'images/heineken.png')">Adicionar ao
+                    Carrinho</button>
+            </div>
+
+            <!-- Produto: Budweiser Long Neck -->
+            <div class="product-card">
+                <img src="images/budweiser.png" alt="Budweiser"
+                    style="width: 235px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>Budweiser Long Neck</h3>
+                <p class="price">R$ 12,00</p>
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(10, 'Budweiser Long Neck', 12.00, '330ml.', 'images/budweiser.png')">Adicionar ao
+                    Carrinho</button>
+            </div>
+
+            <!-- Produto: Del Valle Laranja -->
+            <div class="product-card">
+                <img src="images/delValleLaranja.png" alt="del Valle Laranja"
+                    style="width: 235px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>Del Valle Laranja</h3>
+                <p class="price">R$ 6.59</p>
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(11, 'Del Valle Laranja', 6.59, '200ml.', 'images/delValleLaranja.png')">Adicionar
+                    ao Carrinho</button>
+            </div>
+
+            <!-- Produto: Del Valle Uva -->
+            <div class="product-card">
+                <img src="images/delValleUva.png" alt="del Valle Uva"
+                    style="width: 150px; height: auto; object-fit: contain; display: block; margin: auto;">
+                <h3>Del Valle Uva</h3>
+                <p class="price">R$ 6.59</p>
+                <button style="width: 250px; height: auto; object-fit: contain; display: block; margin: auto;"
+                    onclick="openModal(12, 'Del Valle Uva', 6.59, '200ml.', 'images/delValleUva.png')">Adicionar ao
+                    Carrinho</button>
+            </div>
+        </section>
+
+        <!-- Modal de Seleção de Quantidade -->
+        <div id="quantity-modal" class="modal">
+            <div class="modal-content">
+                <!-- Botão para fechar o modal -->
+                <span class="close" onclick="closeModal()">&times;</span>
+
+                <!-- Informações do produto no modal -->
+                <div class="modal-product-details">
+                    <img id="modal-product-image" src="" alt="Produto" class="modal-product-image">
+                    <div class="modal-product-info">
+                        <h2 id="modal-product-name">Nome do Produto</h2>
+                        <p id="modal-product-description">Descrição do Produto</p>
+                        <p class="price">R$ <span id="modal-product-price">0,00</span></p>
                     </div>
-                    <button onclick="proceedToPayment()">Ir para Pagamento</button>
                 </div>
+
+                <!-- Seletor de quantidade -->
+                <h3>Selecione a Quantidade</h3>
+                <div class="quantity-selector">
+                    <button onclick="decrementQuantity()">-</button>
+                    <input type="number" id="quantity" value="1" min="1" max="5">
+                    <button onclick="incrementQuantity()">+</button>
+                </div>
+
+                <!-- Botão para confirmar e adicionar ao carrinho -->
+                <button onclick="addToCart()">Confirmar</button>
+            </div>
+        </div>
+
+        <!-- Painel do Carrinho de Compras -->
+        <div id="shopping-cart" class="cart-panel">
+            <h2>Carrinho de Compras</h2>
+
+            <!-- Itens adicionados ao carrinho serão listados aqui -->
+            <div id="cart-items"></div>
+
+            <!-- Total do carrinho -->
+            <div class="cart-total">
+                <h3>Total: R$ <span id="cart-total">0,00</span></h3>
             </div>
 
-            <div id="toast" class="toast"></div>
+            <!-- Ações do carrinho -->
+            <div class="cart-actions">
+                <button onclick="closeCart()">Continuar Comprando</button>
+                <button onclick="openPaymentModal()">Ir para Pagamento</button>
+            </div>
+        </div>
+
+        <!-- Modal de Pagamento -->
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <!-- Botão para fechar o modal de pagamento -->
+                <span class="close" onclick="closePaymentModal()">&times;</span>
+
+                <!-- Resumo dos produtos no pagamento -->
+                <h2>Resumo do Pedido</h2>
+                <div id="payment-items"></div>
+
+                <!-- Total a pagar -->
+                <div class="payment-total">
+                    <h3>Total: R$ <span id="payment-total">0,00</span></h3>
+                </div>
+
+                <!-- Botão para confirmar pagamento -->
+                <button onclick="proceedToPayment()">Ir para Pagamento</button>
+            </div>
+        </div>
+
+        <!-- Toast de Notificações -->
+        <div id="toast" class="toast"></div>
+
     </main>
 
+    <!-- Rodapé da página -->
     <footer>
-        <p>&copy; 2025 - La Casa da Pizza. Todos os direitos reservados.</p>
+        <p>&copy; 2023 - La Casa da Pizza. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Importação do arquivo JavaScript -->
     <script src="script.js"></script>
-</body>
-
-</html>

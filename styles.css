@@ -1,3 +1,4 @@
+/* Reset de margens, padding e define uma fonte padrão */
 * {
     margin: 0;
     padding: 0;
@@ -5,38 +6,53 @@
     font-family: Arial, sans-serif;
 }
 
+/* Cor de fundo da página */
 body {
     background-color: #f5f5f5;
 }
 
+/* Estilo do cabeçalho */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: linear-gradient(to right, #471212, red); /* Degradê de preto para amarelo */
+    background: linear-gradient(to right, #471212, red);
+    /* Degradê de vermelho escuro para vermelho claro */
     color: white;
     top: 0;
     z-index: 100;
+    /* Fica acima de outros elementos */
 }
 
+/* Estilo da área do título */
+.titulo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
+
+/* Estilo da logo */
 .logo h1 {
     margin: 0;
     font-size: 1.5rem;
 }
 
+/* Estilos do menu de navegação */
 .menu ul {
     list-style: none;
+    /* Remove marcadores da lista */
     display: flex;
     gap: 1.5rem;
     margin: 0;
     padding: 0;
 }
 
+/* Cada item do menu */
 .menu ul li {
     display: inline;
 }
 
+/* Links do menu */
 .menu ul li a {
     text-decoration: none;
     color: white;
@@ -44,44 +60,55 @@ header {
     transition: color 0.3s ease;
 }
 
+/* Hover nos links do menu */
 .menu ul li a:hover {
-    color: #27ae60; /* Cor verde ao passar o mouse */
+    color: #27ae60;
+    /* Verde no hover */
 }
 
+/* Área principal do conteúdo */
 main {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    /* Centraliza o conteúdo */
 }
 
+/* Barra de produtos */
 .product-barra {
     background-color: red;
     color: white;
     padding: 5px;
+    border-radius: 11px;
     font-size: 25px;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Container dos produtos em grade */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Responsivo */
     gap: 2rem;
     margin-bottom: 2rem;
 }
 
+/* Cartão individual de produto */
 .product-card {
     background-color: white;
     border-radius: 8px;
     padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
+/* Efeito hover no cartão */
 .product-card:hover {
     transform: translateY(-5px);
 }
 
+/* Imagem do produto */
 .product-card img {
     width: 100%;
     height: 200px;
@@ -90,26 +117,32 @@ main {
     margin-bottom: 1rem;
 }
 
+/* Título do produto */
 .product-card h3 {
     margin-bottom: 0.5rem;
     color: #333;
 }
 
+/* Preço do produto */
 .price {
     font-size: 1.25rem;
     color: #2ecc71;
+    /* Verde */
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
+/* Descrição do produto */
 .description {
     color: #666;
     margin-bottom: 1rem;
     line-height: 1.4;
 }
 
+/* Botões gerais */
 button {
     background-color: #cc2e2e;
+    /* Vermelho */
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -119,10 +152,13 @@ button {
     transition: background-color 0.3s ease;
 }
 
+/* Hover dos botões */
 button:hover {
     background-color: #27ae60;
+    /* Verde no hover */
 }
 
+/* Botão de remover item */
 button.remove-item {
     background-color: red;
     color: white;
@@ -132,22 +168,26 @@ button.remove-item {
     border-radius: 3px;
 }
 
+/* Hover botão de remover */
 button.remove-item:hover {
     background-color: darkred;
 }
 
-/* Modal Styles */
+/* Estilos do modal (pop-up) */
 .modal {
     display: none;
+    /* Escondido por padrão */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo escuro semi-transparente */
     z-index: 1000;
 }
 
+/* Conteúdo do modal */
 .modal-content {
     background-color: white;
     padding: 2rem;
@@ -159,6 +199,7 @@ button.remove-item:hover {
     min-width: 300px;
 }
 
+/* Botão de fechar o modal */
 .close {
     position: absolute;
     right: 1rem;
@@ -167,6 +208,7 @@ button.remove-item:hover {
     cursor: pointer;
 }
 
+/* Seletor de quantidade dentro do modal */
 .quantity-selector {
     display: flex;
     justify-content: center;
@@ -175,15 +217,17 @@ button.remove-item:hover {
     margin: 1rem 0;
 }
 
+/* Input de quantidade */
 quantity-selector input {
     width: 60px;
     text-align: center;
     padding: 0.5rem;
 }
 
-/* Cart Panel */
+/* Painel do carrinho lateral */
 .cart-panel {
-    display: none; /* Oculto por padrão */
+    display: none;
+    /* Escondido por padrão */
     position: fixed;
     right: 0;
     top: 0;
@@ -196,66 +240,78 @@ quantity-selector input {
     z-index: 1000;
 }
 
+/* Ativa o painel do carrinho */
 .cart-panel.active {
     display: block;
 }
 
+/* Lista de itens do carrinho */
 #cart-items {
     margin: 1rem 0;
 }
 
+/* Cada item no carrinho */
 .cart-item {
     border-bottom: 1px solid #eee;
     padding: 1rem 0;
 }
 
+/* Total do carrinho */
 .cart-total {
     margin-top: 2rem;
     text-align: right;
 }
 
+/* Rodapé */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1rem;
-    
     bottom: 0;
     width: 100%;
 }
 
+/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     .products {
         grid-template-columns: 1fr;
+        /* Apenas 1 coluna */
     }
-    
+
     .cart-panel {
         width: 100%;
+        /* Ocupa a tela toda */
     }
 }
 
+/* Detalhes do produto no modal */
 .modal-product-details {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
+/* Imagem do produto no modal */
 .modal-product-image {
     width: 150px;
     height: auto;
     border-radius: 8px;
 }
 
+/* Informações do produto no modal */
 .modal-product-info {
     flex: 1;
 }
 
+/* Layout dos itens no carrinho */
 .cart-item {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
+/* Imagem pequena do item no carrinho */
 .cart-item-image {
     width: 50px;
     height: auto;
@@ -263,16 +319,19 @@ footer {
     border-radius: 4px;
 }
 
+/* Detalhes do item no carrinho */
 .cart-item-details {
     flex: 1;
 }
 
+/* Botões de ação no carrinho */
 .cart-actions {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
+/* Estilo dos botões de ação */
 .cart-actions button {
     padding: 10px 20px;
     font-size: 16px;
@@ -281,22 +340,26 @@ footer {
     border-radius: 5px;
 }
 
+/* Botão cinza (cancelar) */
 .cart-actions button:first-child {
     background-color: #f0f0f0;
     color: #333;
 }
 
+/* Botão azul (finalizar compra) */
 .cart-actions button:last-child {
     background-color: #007bff;
     color: #fff;
 }
 
+/* Total de pagamento */
 .payment-total {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
 }
 
+/* Cada item na tela de pagamento */
 .payment-item {
     display: flex;
     align-items: center;
@@ -304,22 +367,24 @@ footer {
     gap: 15px;
 }
 
+/* Imagem de produto na tela de pagamento */
 .payment-item-image {
     width: 60px;
     height: auto;
     border-radius: 5px;
 }
 
+/* Detalhes do item na tela de pagamento */
 .payment-item-details {
     display: flex;
     gap: 10px;
     align-items: flex-start;
 }
 
+/* Notificação (toast) */
 .toast {
     visibility: hidden;
     min-width: 250px;
-    margin-left: -125px;
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -330,16 +395,4 @@ footer {
     left: 50%;
     bottom: 30px;
     font-size: 17px;
-    opacity: 0;
-    transition: opacity 0.5s, visibility 0.5s;
 }
-
-.toast.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.mb-3 {
-    position: center;
-}
-

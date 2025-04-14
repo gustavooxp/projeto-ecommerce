@@ -1,0 +1,157 @@
+/* Garantir que padding e borda não aumentem o tamanho do elemento */
+* {
+    box-sizing: border-box;
+}
+
+/* Estiliza o body da página */
+body {
+    font-family: Arial, sans-serif;
+    /* Define a fonte */
+    margin: 0;
+    /* Remove a margem padrão */
+    padding: 0;
+    /* Remove o preenchimento padrão */
+    display: flex;
+    /* Usado para centralizar o conteúdo */
+    justify-content: center;
+    /* Alinha o conteúdo horizontalmente no centro */
+    align-items: center;
+    /* Alinha o conteúdo verticalmente no centro */
+    min-height: 100vh;
+    /* Garante que a altura mínima seja 100% da altura da tela */
+    background-color: #f4f4f9;
+    /* Define a cor de fundo suave */
+}
+
+/* Contêiner do pagamento */
+.payment-container {
+    display: flex;
+    /* Exibe o contêiner como flexbox */
+    flex-direction: column;
+    /* Organiza os itens na vertical */
+    align-items: center;
+    /* Alinha os itens no centro */
+    background: #fff;
+    /* Cor de fundo branca */
+    padding: 30px 20px;
+    /* Espaçamento interno */
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra suave ao redor */
+    max-width: 400px;
+    /* Largura máxima do contêiner */
+    width: 90%;
+    /* Largura para se ajustar a telas menores */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+/* Estilo do parágrafo dentro do container de pagamento */
+.payment-container p {
+    font-size: 20px;
+    /* Tamanho da fonte */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo do parágrafo */
+    color: #333;
+    /* Cor do texto */
+}
+
+/* Estilo do QR Code */
+.qr-code {
+    margin: 20px 0;
+    /* Margem superior e inferior */
+}
+
+.qr-code img {
+    width: 200px;
+    /* Largura da imagem */
+    height: 200px;
+    /* Altura da imagem */
+    object-fit: cover;
+    /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+/* Estilo do botão de voltar */
+.back-button {
+    display: inline-block;
+    /* Exibe o botão como um bloco inline */
+    margin-top: 20px;
+    /* Margem superior */
+    padding: 12px 24px;
+    /* Espaçamento interno */
+    background-color: #007bff;
+    /* Cor de fundo do botão */
+    color: #fff;
+    /* Cor do texto */
+    text-decoration: none;
+    /* Remove a decoração de link */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    transition: background-color 0.3s ease;
+    /* Transição suave para a mudança de cor */
+}
+
+/* Efeito de hover para o botão de voltar */
+.back-button:hover {
+    background-color: #0056b3;
+    /* Muda a cor do fundo quando o mouse passa por cima */
+}
+
+/* Estiliza o formulário */
+form {
+    width: 100%;
+    /* Largura completa do formulário */
+    margin-top: 20px;
+    /* Margem superior */
+}
+
+/* Margem para os campos do formulário */
+.mb-3 {
+    margin-bottom: 15px;
+    /* Margem inferior */
+}
+
+/* Estilo para os campos de entrada */
+.form-control {
+    width: 100%;
+    /* Largura completa */
+    padding: 12px;
+    /* Espaçamento interno */
+    border: 1px solid #ccc;
+    /* Borda com cor suave */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    font-size: 16px;
+    /* Tamanho da fonte */
+}
+
+/* Estilo do botão de envio */
+.btn-primary {
+    width: 100%;
+    /* Largura completa do botão */
+    padding: 12px;
+    /* Espaçamento interno */
+    background-color: #007bff;
+    /* Cor de fundo */
+    color: #fff;
+    /* Cor do texto */
+    border: none;
+    /* Sem borda */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s ease;
+    /* Transição suave */
+}
+
+/* Efeito de hover para o botão de envio */
+.btn-primary:hover {
+    background-color: #0056b3;
+    /* Muda a cor do fundo ao passar o mouse */
+}
