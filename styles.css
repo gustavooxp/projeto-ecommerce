@@ -252,14 +252,21 @@ quantity-selector input {
 
 /* Cada item no carrinho */
 .cart-item {
-    border-bottom: 1px solid #eee;
-    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e4e4e4;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Total do carrinho */
 .cart-total {
-    margin-top: 2rem;
-    text-align: right;
+    font-size: 1.3rem;
+    align-items: center;
+    color: #27ae60;
 }
 
 /* Rodapé */
@@ -319,9 +326,15 @@ footer {
     border-radius: 4px;
 }
 
-/* Detalhes do item no carrinho */
-.cart-item-details {
-    flex: 1;
+.cart-item-details h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.cart-item-details p {
+    font-size: 0.9rem;
+    color: #777;
 }
 
 /* Botões de ação no carrinho */
